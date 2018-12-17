@@ -1,3 +1,5 @@
+##  Free Angular for Beginners Course
+https://www.youtube.com/watch?v=fnH573xJ2Eo&index=14&list=PLOa5YIicjJ-UE-tDU5s2wCGg5wbSGjN6g&t=0s
 
 ##  Angular Core Deep Dive (Video Course)
 
