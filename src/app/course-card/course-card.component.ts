@@ -37,4 +37,21 @@ export class CourseCardComponent implements OnInit {
     this.courseSelected.emit(this.course); //Emmit a custome value
   }
 
+  cardClasses() {
+  //Method 2. Return a string or array
+  if(this.course.category == 'BEGINNER') {
+    return ['beginner'];
+  }
+
+  //Method 1. Return a Configuration Object
+    return {
+      'beginner': this.course.category == 'BEGINNER'
+    }
+  }
+
+  cardStyles() {
+    // return a style configuration object
+    return { 'text-decoration': 'underline'}
+  }
+
 }
