@@ -1,25 +1,26 @@
 
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import {  } from '@angular/core';
-import { COURSES } from './../../db-data';
+// import { COURSES } from './../../db-data';
 import { Course } from '../model/course';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'course-card',
   templateUrl: './course-card.component.html',
   styleUrls: ['./course-card.component.css']
 })
 
 export class CourseCardComponent implements OnInit {
-  //Member Variables
-  @Input()       //Attribute directive changes the appearance or behavior of a DOM element.
-  course: Course //Anotated with angular core Input decorator
+  // Member Variables
+  @Input()       // Attribute directive changes the appearance or behavior of a DOM element.
+  course: Course; // Anotated with angular core Input decorator
 
   @Input()
   courseIndex: Number;
 
   // Custom Event Emmitter
-  @Output()     //Output decorator
+  @Output()     // Output decorator
   courseSelected = new EventEmitter<Course>();
 
   constructor() { }
@@ -28,30 +29,30 @@ export class CourseCardComponent implements OnInit {
   }
 
   isImageVisible() {
-    return this.course && this.course.iconUrl;
+    return this.course && this.course.iconUrl; //both course and course property iconUrl must be present to return true
   }
 
-  //Click Handler Function
+  // Click Handler Function
   onCourseViewed() {
     console.log('Course Viewed');
-    this.courseSelected.emit(this.course); //Emmit a custome value
+    this.courseSelected.emit(this.course); // Emmit a custome value
   }
 
   cardClasses() {
-  //Method 2. Return a string or array
+  // Method 2. Return a string or array
   if(this.course.category == 'BEGINNER') {
     return ['beginner'];
   }
 
-  //Method 1. Return a Configuration Object
+  // Method 1. Return a Configuration Object
     return {
       'beginner': this.course.category == 'BEGINNER'
-    }
+    };
   }
 
   cardStyles() {
     // return a style configuration object
-    return { 'text-decoration': 'underline'}
+    return { 'text-decoration': 'underline'};
   }
 
 }

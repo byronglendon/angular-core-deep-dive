@@ -13,6 +13,7 @@ export class AppComponent {
   // coreCourse = COURSES[0];
   // rxjsCourse = COURSES[1];
   // ngrxCourse = COURSES[2];
+  startDate = new Date(2000);
 
 //Custom Event Handler Function
 //Parameter = value that got emmitted by the eventEmmitter
